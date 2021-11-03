@@ -1,0 +1,4 @@
+last day is xmas eve
+back tues 5th
+
+ - what's the underlying data structure - traverse as a list, or as a hash? ie complexity stuff.
