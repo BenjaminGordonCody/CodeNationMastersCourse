@@ -23,14 +23,14 @@ const Pet = function (name, type, age, colour) {
       }
     };
   
-    this.addFoodFeels = (feels) => {
+    this.addFoodFeels = () => {
       if (this.nourished < 10) {
-        feels.push("is starving");
+        return("is starving.");
       }
       if (this.nourished > 30) {
-        feels.push("has overeaten");
+        return("has overeaten.");
       }
-      return feels;
+      return "isn't hungry.";
     };
   
     this.digestiveConsequences = () => {
@@ -39,17 +39,25 @@ const Pet = function (name, type, age, colour) {
       }
       else if (this.nourished > 35){
         this.health -= 5;
+        console.log(`${this.name} vomited`);
       }
     }
   
     //processes all internal stats and outputs how pet is feeling
     this.feels = () => {
       let feels = [];
-      feels = this.addFoodFeels(feels);
+      
+      // Get all pet's feelings first
+      feels.push(this.addFoodFeels());
   
+      // print feelings to log
       for (const feel in feels) {
         console.log(`${this.name} ${feels[feel]}`);
       }
+
+      // CONSEQUENCES!
+      this.digestiveConsequences();
+
     };
   
     // Changes self.nourished and writes description of action to log.
@@ -66,7 +74,7 @@ const Pet = function (name, type, age, colour) {
   const wiggles = new Pet("Wiggles", "pig", 21, "eau-de-nil");
   
   // demo of eat/drink/other function
-  // wiggles.digest(5, "eat");
-  // wiggles.digest(1, "drink");
-  wiggles.digest(31, "eat");
+  wiggles.digest(5, "eat");
+  wiggles.digest(1, "drink");
+  wiggles.digest(310, "eat");
   
