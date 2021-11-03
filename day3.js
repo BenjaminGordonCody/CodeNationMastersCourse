@@ -63,28 +63,29 @@ const Pet = function (name, type, age, colour) {
     }
   };
 
+  this.foodFeels = () => {
+    if (this.nourished <= 0) {
+      this.health = -5;
+    }
+    if (this.nourished < 10) {
+      feels.push("is starving");
+    }
+    if (this.nourished > 30) {
+      feels.push("has overeaten");
+    }
+    if (this.nourished > 35) {
+      this.digest(-10, "vomit");
+    }
+    return feels;
+  };
+
   //processes all internal statrs and outputs how pet is feeling
   this.feels = () => {
-    function foodFeels(feels) {
-      if (this.nourished <= 0) {
-        this.health = -5;
-      }
-      if (this.nourished < 10) {
-        feels.push("is starving");
-      }
-      if (this.nourished > 30) {
-        feels.push("has overeaten");
-      }
-      if (this.nourished > 35) {
-        this.digest(-10, "vomit");
-      }
-      return feels;
-    }
-
-    let feels = [,];
-    feels = foodFeels(feels);
+    let feels = ["test", "test2"];
+    feels = this.foodFeels(feels);
     for (const feel in feels) {
       console.log(feel);
+    }
   };
 
   // Changes self.nourished and writes description of action to log.
