@@ -1,0 +1,30 @@
+#bounding {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+#main {
+  background-color: darkgray;
+  padding: 15px;
+  flex: 1;
+}
+#buttons {
+  display: flex;
+  flex-direction: column;
+  background-color: darksalmon;
+  flex: 1;
+}
+.choice {
+  background-color: darkgoldenrod;
+  margin: 15px;
+}
+#stats {
+  background-color: chartreuse;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#player {
+  background-color: darkseagreen;
+}
