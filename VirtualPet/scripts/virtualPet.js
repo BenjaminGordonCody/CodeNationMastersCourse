@@ -2,11 +2,8 @@
 A constructor for a pet
 
 TODO
-refactor feels/consequence so food and health happens in a more sensible
-
-
-- add health feels
-- add happiness
+- define boundaries health/nutrition/happiness as globals near top of file
+-change feels() funcs to to reference global variables at top
 - add happiness setter
 - add happiness consequences for other events
 - add play
@@ -48,6 +45,12 @@ const Pet = function (name, type, age, colour) {
   this.colour = colour;
   this.nourished = 15;
   this.health = 100;
+  this.happiness = 100;
+
+  this.refresh = () => {
+    this.output();
+    this.stats();
+  };
 
   //Prints pet's stats in full
   this.stats = () => {
@@ -61,12 +64,34 @@ const Pet = function (name, type, age, colour) {
     }
   };
 
+  this.output = () => {
+    output = [this.getDigestiveFeels, this.getHealthFeels];
+
+    for (let item in output) {
+      output[item] = `${this.name} ${output[item]()}`;
+      output[item] = getPara(output[item]);
+      append(output[item], "text");
+    }
+  };
+
   this.getDigestiveFeels = () => {
     if (this.nourished < 10) {
+      this.health -= 10;
       return "is starving.";
     }
-    if (this.nourished > 30) {
-      return "has overeaten.";
+    if (this.nourished > 50) {
+      this.health -= this.nourished - 50;
+      if (this.nourished > 60) {
+        this.nourished -= 5;
+        return "is vomiting.";
+      } else {
+        return "has overeaten";
+      }
+    }
+    if (this.nourished > 40) {
+      return "feels very full.";
+    } else if (this.nourished < 20) {
+      return "is hungry";
     } else {
       return "isn't hungry.";
     }
@@ -77,8 +102,10 @@ const Pet = function (name, type, age, colour) {
       return "is dying.";
     } else if (this.health < 50) {
       return "isn't well.";
+    } else if (this.health > 70) {
+      return "is physically spectacular";
     }
-    return "feels fine";
+    return "is physically adequate";
   };
 
   this.digestiveConsequences = () => {
@@ -92,46 +119,17 @@ const Pet = function (name, type, age, colour) {
     return "digestiveConsequences";
   };
 
-  //processes all internal stats and outputs how pet is feeling
-  this.feels = () => {
-    let feels = [];
-
-    // Get all pet's feelings first
-    feels.push(this.getDigestiveFeels());
-    feels.push(this.getHealthFeels());
-
-    // print feelings to log
-    for (const feel in feels) {
-      let para = getPara(`${this.name} ${feels[feel]}`);
-      append(para, "text");
-    }
-  };
-
-  this.consequences = () => {
-    let consequences = [];
-    consequences.push(this.digestiveConsequences());
-    for (const item in consequences) {
-      let para = getPara(`${this.name} ${consequences[item]}`);
-      append(para, "text");
-    }
-  };
-
-  // Changes self.nourished and writes description of action to log.
   this.digest = (nutrition, verb) => {
     clear("text");
     this.nourished += nutrition;
     append(getPara(`${this.name} is ${verb}ing!`), "text");
-    this.feels();
-    this.consequences();
-    this.stats();
+    this.refresh();
   };
 };
 
 // birth Wiggles
 const wiggles = new Pet("Wiggles", "pig", 21, "eau-de-nil");
-wiggles.stats();
-wiggles.feels();
-wiggles.consequences();
+wiggles.refresh();
 
 // Interface for wiggles
 const buttons = {
@@ -140,6 +138,9 @@ const buttons = {
   },
   drink: () => {
     wiggles.digest(1, "drink");
+  },
+  vomit: () => {
+    wiggles.digest(-5, "vomit");
   },
 };
 
