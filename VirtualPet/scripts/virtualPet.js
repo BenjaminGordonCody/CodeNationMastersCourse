@@ -6,7 +6,7 @@ TODO
 - play consequences/feels - makes happier, healthier, less nourished
 - add read (include array of things that could be read)
 -add set/get for read
--- makes happier
+  -- makes happier
 - implement death.
 */
 
