@@ -58,26 +58,26 @@
 }
 
 #link1 {
-  background-image: url(/Portfolio/images/navbar/leopard\ print.png);
+  background-image: url(../images/navbar/leopard\ print.png);
 }
 
 #link2 {
-  background-image: url(/Portfolio/images/navbar/cheetah.png);
+  background-image: url(../images/navbar/cheetah.png);
 }
 
 #navbarspacer {
   height: 20px;
 }
 #link3 {
-  background-image: url(/Portfolio/images/navbar/fur.png);
+  background-image: url(../images/navbar/fur.png);
 }
 
 #link4 {
-  background-image: url(/Portfolio/images/navbar/paper.png);
+  background-image: url(../images/navbar/paper.png);
 }
 
 #link5 {
-  background-image: url(/Portfolio/images/navbar/feather.png);
+  background-image: url(../images/navbar/feather.png);
 }
 
 /*Fonts, all viewport sizes*/
@@ -105,7 +105,7 @@
   margin: 2px;
   text-transform: lowercase;
   margin-left: 0;
-  background-image: url(/Portfolio/images/wave.png);
+  background-image: url(../images/wave.png);
   background-size: 100px;
   padding-left: 6px;
   padding-top: 25px;
@@ -127,6 +127,7 @@
 .cardbox {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .cardbox h2 {
@@ -226,7 +227,7 @@
   /* Background Triangles */
   #leftslash {
     background-color: #86d3f5;
-    background-image: url(/Portfolio/images/wave.png);
+    background-image: url(../images/wave.png);
     background-blend-mode: screen;
     background-size: 15vw;
     opacity: 0.4;
@@ -315,7 +316,7 @@
   }
 
   #burgerButton {
-    background-image: url(/Portfolio/images/navbar/burgerbars.png);
+    background-image: url(../images/navbar/burgerbars.png);
     background-color: #f59fad;
     background-size: contain;
     background-repeat: no-repeat;
@@ -325,6 +326,14 @@
     border: 0px;
     margin: 5px;
     min-width: 100px;
-    /* min-height: 100px; */
+  }
+  #uniqueContent {
+    top: 15vh;
+    left: 5vw;
+    right: 2vw;
+  }
+
+  .card {
+    width: 100%;
   }
 }

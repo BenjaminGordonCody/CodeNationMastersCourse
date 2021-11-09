@@ -38,10 +38,22 @@ function addAnimation() {
   });
 }
 function addMenuForMobile() {
+  const switchMenu = () => {
+    let navbar = document.getElementById("navbar");
+    console.log(navbar.style.display);
+
+    if (navbar.style.display === "flex") {
+      navbar.style.display = "none";
+    } else {
+      navbar.style.display = "flex";
+      console.log("else");
+    }
+  };
+
   let button = document.createElement("button");
-  // button.style.backgroundImage = "Portfolio/images/navbar/burgerbars.png";
   button.style.background = "Portfolio/images/waves.png";
   button.id = "burgerButton";
+  button.onclick = switchMenu;
   document.getElementById("burgerButtonBox").append(button);
 }
 
