@@ -35,11 +35,6 @@
   top: 0%;
 }
 
-#burgerButton {
-  background-color: cadetblue;
-  /* display: none; */
-}
-
 #navbar {
   z-index: 3;
   position: fixed;
@@ -296,5 +291,40 @@
   }
   #titleBar {
     background-color: #f59fad;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  #title {
+    flex-grow: 1;
+    /* background-color: cornflowerblue; */
+  }
+  #title h1 {
+    margin-left: 3vw;
+  }
+
+  #title h2 {
+    display: none;
+  }
+  #burgerButtonBox {
+    flex: 1;
+    display: flex;
+    /* background-color: coral; */
+    flex-grow: 1;
+  }
+
+  #burgerButton {
+    background-image: url(/Portfolio/images/navbar/burgerbars.png);
+    background-color: #f59fad;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-blend-mode: screen;
+    border: 0px;
+    margin: 5px;
+    min-width: 100px;
+    /* min-height: 100px; */
   }
 }

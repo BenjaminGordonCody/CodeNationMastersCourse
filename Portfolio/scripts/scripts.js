@@ -3,10 +3,10 @@ function addGenericPageElements() {
   <div id="topslash"></div>
   <div id="titleBar">
     <div id="title">
-      <h1>Benjamin Gordon-Cody</h1>
+      <h1>B. Gordon-Cody</h1>
       <h2>Creative Programing and Narrative Data Science</h2>
     </div>
-    <div id="burgerButton">Button</div>
+    <div id="burgerButtonBox"></div>
   </div>
   <div id="navbar">
     <a href="projects.html" id="link1" class="navLink">Projects</a>
@@ -21,10 +21,8 @@ function addGenericPageElements() {
       <div id="leftslashaccent"></div>`;
 
   document.getElementById("foregroundContainer").innerHTML = foreground;
-
   document.getElementById("backgroundContainer").innerHTML = background;
 }
-
 function addAnimation() {
   function wiggleTopTriangle(num) {
     let triangle = document.getElementById("topslash");
@@ -39,6 +37,14 @@ function addAnimation() {
     wiggleTopTriangle("100");
   });
 }
+function addMenuForMobile() {
+  let button = document.createElement("button");
+  // button.style.backgroundImage = "Portfolio/images/navbar/burgerbars.png";
+  button.style.background = "Portfolio/images/waves.png";
+  button.id = "burgerButton";
+  document.getElementById("burgerButtonBox").append(button);
+}
 
 addGenericPageElements();
 addAnimation();
+addMenuForMobile();
