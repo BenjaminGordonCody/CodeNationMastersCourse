@@ -289,12 +289,23 @@
 @media (max-width: 649px) {
   #navbar {
     display: none;
+    flex-direction: row;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    background-color: crimson;
+    width: 100%;
+  }
+
+  .navLink {
+    flex: 1;
+    font-size: 7vh;
+    padding: 1vh;
   }
   #titleBar {
     background-color: #f59fad;
     display: flex;
     align-items: stretch;
-    justify-content: center;
+    justify-content: safe;
   }
 
   #title {
@@ -328,7 +339,7 @@
     min-width: 100px;
   }
   #uniqueContent {
-    top: 15vh;
+    top: 30vh;
     left: 5vw;
     right: 2vw;
   }
