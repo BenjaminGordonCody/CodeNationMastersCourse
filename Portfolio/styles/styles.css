@@ -1,0 +1,300 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,500&family=Sawarabi+Mincho&display&family=Bebas+Neue&display==swap");
+
+/* Layout of divs for all display sizes*/
+#backgroundContainer {
+  z-index: 0;
+  background-color: #4c8da8;
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+#foregroundContainer {
+  position: fixed;
+  z-index: 2;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  display: flexbox;
+  flex-direction: column;
+}
+
+#uniqueContent {
+  z-index: 1;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+#titleBar {
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  position: static;
+  top: 0%;
+}
+
+#burgerButton {
+  background-color: cadetblue;
+  /* display: none; */
+}
+
+#navbar {
+  z-index: 3;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+  border: 100px;
+  border-color: black;
+}
+
+.navLink {
+  display: block;
+  background-color: #f5ef6e;
+  background-repeat: no-repeat;
+  background-blend-mode: screen;
+  background-size: auto 100%;
+  font-family: "Bebas Neue", cursive;
+  color: black;
+  text-decoration: none;
+}
+
+#link1 {
+  background-image: url(/Portfolio/images/navbar/leopard\ print.png);
+}
+
+#link2 {
+  background-image: url(/Portfolio/images/navbar/cheetah.png);
+}
+
+#navbarspacer {
+  height: 20px;
+}
+#link3 {
+  background-image: url(/Portfolio/images/navbar/fur.png);
+}
+
+#link4 {
+  background-image: url(/Portfolio/images/navbar/paper.png);
+}
+
+#link5 {
+  background-image: url(/Portfolio/images/navbar/feather.png);
+}
+
+/*Fonts, all viewport sizes*/
+#title h1 {
+  font-family: "Sawarabi Mincho", sans-serif;
+  color: white;
+  text-decoration: none;
+  transition: color 2s;
+}
+
+#title h2 {
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+#title a {
+  text-decoration: none;
+}
+
+#uniqueContent {
+  font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#uniqueContent h1 {
+  font-family: "Sawarabi Mincho", Roboto, Verdana, Geneva, Tahoma, sans-serif;
+  margin: 2px;
+  text-transform: lowercase;
+  margin-left: 0;
+  background-image: url(/Portfolio/images/wave.png);
+  background-size: 100px;
+  padding-left: 6px;
+  padding-top: 25px;
+}
+
+#uniqueContent h2 {
+  display: block;
+  margin: 2px;
+  margin-left: 15px;
+}
+
+#uniqueContent p {
+  margin-top: 4px;
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
+
+/*Card Display, all sizes */
+.cardbox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cardbox h2 {
+  background-color: rgb(255, 255, 255, 0.5);
+  padding: 5px;
+}
+
+.card {
+  width: 250px;
+  height: 250px;
+  padding: 10px;
+  border: 1px;
+  margin: 10px;
+  background-color: #f59fad;
+  box-shadow: 2px 4px 4px rgba(76, 141, 168, 0.8);
+  background-image: url(./dummy.png); /* this is the default image, change via card id*/
+  background-blend-mode: luminosity;
+  background-size: auto 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#legalchange {
+  background-image: url(./lgbtlegal.png);
+}
+
+#lesbiancategory {
+  background-image: url(./lesbian-symbol-badge.png);
+}
+
+/* Desktop specific styling*/
+@media (min-width: 650px) {
+  /* Top of the page*/
+  #title h1 {
+    padding-top: 0%;
+    margin: 0vw;
+    margin-left: 1vw;
+    font-size: 8vh;
+  }
+  #title h2 {
+    margin: 0vw;
+    margin-left: 4vw;
+  }
+  #burgerButton {
+    display: none;
+  }
+
+  #titleBar {
+    transition: width 3s;
+    /* width: auto; */
+  }
+
+  /* Navbar stuff */
+  #navbar {
+    margin-top: 15vh;
+  }
+  .navLink {
+    display: block;
+    background-color: #f5ef6e;
+    background-repeat: no-repeat;
+    background-blend-mode: screen;
+    background-size: auto 100%;
+    min-width: 100px;
+    width: 10vw;
+    padding: 15px;
+    padding-right: 0px;
+    margin-top: 5px;
+    transition: width 1s, background-color 1s;
+    font-family: "Bebas Neue", cursive;
+    color: black;
+    font-size: 20pt;
+    text-decoration: none;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  }
+
+  .navLink:hover {
+    width: 15vw;
+    background-color: #86d3f5;
+  }
+
+  /*unique Content*/
+  #uniqueContent {
+    position: absolute;
+    top: 20vh;
+    left: 20vw;
+    right: 15vw;
+  }
+
+  #uniqueContent h1:hover {
+    background-size: 150px;
+  }
+
+  .card:hover {
+    margin-top: 0;
+  }
+
+  /* Background Triangles */
+  #leftslash {
+    background-color: #86d3f5;
+    background-image: url(/Portfolio/images/wave.png);
+    background-blend-mode: screen;
+    background-size: 15vw;
+    opacity: 0.4;
+    position: fixed;
+    background-position: right bottom;
+    left: 0;
+    top: 0;
+    width: 15%;
+    height: 100%;
+    clip-path: polygon(100% 0, 0 0, 0 100%);
+    z-index: -1;
+    transition: width 1s, height 3s;
+  }
+
+  #leftslash:hover {
+    height: 92%;
+    width: 18%;
+  }
+
+  #topslash {
+    background-color: #f59fad;
+    position: fixed;
+    opacity: 0.9;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 24%;
+    clip-path: polygon(100% 0, 0 0, 0 100%);
+    z-index: -1;
+    transition: width 2s;
+  }
+
+  #topslash:hover {
+    width: 80%;
+  }
+
+  #leftslashaccent {
+    background-color: #86d3f5;
+    background-size: 1000px;
+    background-position: right top;
+    position: fixed;
+    opacity: 0.7;
+    left: 0;
+    top: 0;
+    width: 25%;
+    height: 80%;
+    clip-path: polygon(100% 0, 0 0, 0 100%);
+    z-index: -3;
+    transition: width 2s, height 1s;
+  }
+
+  #leftslashaccent:hover {
+    width: 30%;
+    height: 90%;
+  }
+}
+
+/*Mobile specific styling*/
+@media (max-width: 649px) {
+  #navbar {
+    display: none;
+  }
+  #titleBar {
+    background-color: #f59fad;
+  }
+}
