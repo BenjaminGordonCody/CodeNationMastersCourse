@@ -3,7 +3,7 @@ function addGenericPageElements() {
   <div id="topslash"></div>
   <div id="titleBar">
     <div id="title">
-      <h1>B. Gordon-Cody</h1>
+      <a href="index.html"><h1>B. Gordon-Cody</h1></a>
       <h2>Creative Programing and Narrative Data Science</h2>
     </div>
     <div id="burgerButtonBox"></div>
@@ -13,7 +13,6 @@ function addGenericPageElements() {
       <a href="education.html" id="link2" class="navLink">Education</a>
       <div id="navbarspacer"></div>
       <a href="https://github.com/BenjaminGordonCody" id="link3" class="navLink">Github</a>
-      <a href="https://twitter.com/bgordoncody" id="link4" class="navLink">Twitter</a>
       <a href="contact.html" id="link5" class="navLink">Contact</a>
   </div>`;
 
