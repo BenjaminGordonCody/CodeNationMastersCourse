@@ -97,21 +97,23 @@ let startButton = document.createElement("button");
 startButton.addEventListener("click", piano.init);
 document.body.appendChild(startButton);
 
+// play dynamics
+let backgroundPosition = {
+  x: 0,
+  y: 0,
+};
 window.addEventListener("keydown", (event) => {
   key = keymap[event.key];
   piano.keys[key].gain.gain.value = 1;
-  divArray[key].style.backgroundColor = colourArray[key];
+  divArray[key].style.backgroundColor = "white"; //colourArray[key];
+  backgroundPosition.x -= 35;
+  document.body.style.backgroundPositionX = `${backgroundPosition.x}px`;
 });
 
 window.addEventListener("keyup", (event) => {
   key = keymap[event.key];
   piano.keys[key].gain.gain.value = 0;
-  divArray[key].style.backgroundColor = "white";
+  divArray[key].style.backgroundColor = "rgba(255,255,255,0)";
+  backgroundPosition.y += 35;
+  document.body.style.backgroundPositionY = `${backgroundPosition.y}px`;
 });
-
-// // TODO
-// generate keys in for loop, major only
-
-// style css into grid
-// have grid respond to keypress (maybe make array of divs?)
-// can i be modal?

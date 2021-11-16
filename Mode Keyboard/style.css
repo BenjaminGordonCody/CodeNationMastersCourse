@@ -1,3 +1,12 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,500&family=Sawarabi+Mincho&display&family=Bebas+Neue&display==swap");
+
+body {
+  background-image: url(./images/stars.png);
+  background-size: 5000%;
+  background-position: 0 0;
+  transition: background-position 1s;
+}
 button {
   width: 200px;
   height: 200px;
@@ -7,7 +16,6 @@ button {
   width: 100px;
   height: 100px;
   padding: 20px;
-  /* border: 2px solid blueviolet; */
   flex: 1;
   transition: background-color 0.5s;
 }
@@ -18,9 +26,20 @@ button {
 #toprow {
   display: flex;
   flex-direction: row;
+  align-items: stretch;
 }
 
 #bottomrow {
   display: flex;
   flex-direction: row;
+}
+
+h1 {
+  font-family: "Sawarabi Mincho", sans-serif;
+  color: rgb(143, 55, 143);
+}
+
+h2 {
+  color: white;
+  font-family: "Roboto", sans-serif;
 }
