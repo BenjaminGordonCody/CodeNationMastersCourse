@@ -1,3 +1,8 @@
+//imports
+// import { createRequire } from "module";
+// const require = createRequire(import.meta.url);
+// const levelsJSON = require("./levels.json");
+
 // Shorthand functions to simplify writing
 const print = (thing, id) => {
   document.getElementById(id).innerHTML = thing;
@@ -146,3 +151,18 @@ const levelInventory = {
 };
 
 loadLevel(levelTemplate);
+
+levels = {
+    mainText: "",
+    option1: {
+        text: "",
+        stats: {},
+        inventory:{}
+    },
+    option2: {
+        text: "",
+        stats: {},
+        inventory: {}
+    }
+    option
+}
