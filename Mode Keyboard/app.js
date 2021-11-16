@@ -20,26 +20,6 @@ makeDivKeys("bottomrow", "bottom");
 //put divs in array for easy referencing
 let divArray = document.getElementsByClassName("pianoKey");
 
-//array of colours to match the divs above
-let colourArray = [
-  "red",
-  "yellow",
-  "blue",
-  "green",
-  "purple",
-  "cornflowerBlue",
-  "darkOrchid",
-  "darkSeaGreen",
-  "yellow",
-  "blue",
-  "green",
-  "purple",
-  "cornflowerBlue",
-  "darkOrchid",
-  "darkSeaGreen",
-  "red",
-];
-
 const keymap = {
   q: 0,
   w: 1,
@@ -94,7 +74,10 @@ let piano = {
 };
 
 // init instrument by click
-document.getElementById("textbox").addEventListener("click", piano.init);
+
+let textbox = document.getElementById("textbox");
+textbox.addEventListener("click", piano.init);
+
 // play dynamics
 let backgroundPosition = {
   x: 0,
@@ -107,6 +90,8 @@ window.addEventListener("keydown", (event) => {
   piano.keys[key].gain.gain.value = 1;
   divArray[key].style.backgroundColor = "white"; //colourArray[key];
   backgroundPosition.x -= 35;
+  textboxPosition += 35;
+  textbox.style.marginTop = `${textboxPosition}px`;
   document.body.style.backgroundPositionX = `${backgroundPosition.x}px`;
 });
 
