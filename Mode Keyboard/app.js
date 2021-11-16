@@ -93,15 +93,15 @@ let piano = {
   },
 };
 
-let startButton = document.createElement("button");
-startButton.addEventListener("click", piano.init);
-document.body.appendChild(startButton);
-
+// init instrument by click
+document.getElementById("textbox").addEventListener("click", piano.init);
 // play dynamics
 let backgroundPosition = {
   x: 0,
   y: 0,
 };
+
+let textboxPosition = 0;
 window.addEventListener("keydown", (event) => {
   key = keymap[event.key];
   piano.keys[key].gain.gain.value = 1;
