@@ -2,3 +2,25 @@ button {
   width: 200px;
   height: 200px;
 }
+
+.pianoKey {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  /* border: 2px solid blueviolet; */
+  flex: 1;
+  transition: background-color 0.5s;
+}
+
+#keyboard {
+  max-width: 80vw;
+}
+#toprow {
+  display: flex;
+  flex-direction: row;
+}
+
+#bottomrow {
+  display: flex;
+  flex-direction: row;
+}
