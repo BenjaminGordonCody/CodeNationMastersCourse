@@ -104,9 +104,6 @@ window.addEventListener("keydown", (event) => {
   document.getElementById(
     "title"
   ).style.color = `rgba(143, 55, 143, ${textboxTransparency}`;
-  document.getElementById(
-    "blurb"
-  ).style.color = `rgba(0, 0, 0, ${textboxTransparency}`;
 
   //move background
   document.body.style.backgroundPositionX = `${backgroundPosition.x}px`;
