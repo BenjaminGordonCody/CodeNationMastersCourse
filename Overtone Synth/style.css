@@ -37,11 +37,22 @@ button {
 h1 {
   font-family: "Sawarabi Mincho", sans-serif;
   color: rgba(143, 55, 143, 1);
+  margin: 5px;
+}
+
+p {
+  font-family: "Roboto";
+  margin-top: 0px;
 }
 
 #textbox {
   position: absolute;
+  top: 20px;
   left: 0px;
-  margin-left: 30vw;
+  max-width: 500px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 25px;
   background-color: rgba(255, 255, 255, 1);
+  border-radius: 15%;
 }
