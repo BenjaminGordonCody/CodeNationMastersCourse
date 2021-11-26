@@ -34,4 +34,21 @@ describe("slide two", () => {
   test("sqrDigits 251 = 4251", () => {
     expect(app.sqrDigits(251)).toBe(4251);
   });
+
+  test('Array of names only contains "Stepahnie"', () => {
+    success = ["Stephanie"];
+    expect(
+      app.onlyItemsOfnLength(["cath", "jess", "gorb", "Stephanie"])
+    ).toEqual(success);
+  });
+});
+
+describe("slide 3", () => {
+  test("1705 was in the 17th century", () => {
+    expect(app.centuryOf(1705)).toBe(17);
+  });
+
+  test("[0,1,0,0] translates to 4", () => {
+    expect(app.binaryArrayToInt([0, 1, 0, 0])).toBe(4);
+  });
 });

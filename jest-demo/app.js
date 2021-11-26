@@ -1,5 +1,4 @@
-const { ModuleMocker } = require("jest-mock");
-const { toInteger } = require("lodash");
+const { toInteger, floor } = require("lodash");
 
 // slide 1 challenges
 const add = (a, b) => {
@@ -20,6 +19,16 @@ function twoProps(val1, val2) {
     val2: val2,
   };
 }
+
+const onlyItemsOfnLength = (list) => {
+  let output = [];
+  for (let i = 0; i < list.length; i++) {
+    if (list[i].length >= 6) {
+      output.push(list[i]);
+    }
+  }
+  return output;
+};
 
 //slide 2 funcs
 function numToString(int) {
@@ -55,13 +64,29 @@ function sqrDigits(num) {
   }
   return toInteger(returnValue);
 }
+
+const centuryOf = (year) => {
+  return floor(year / 100);
+};
+
+const binaryArrayToInt = (list) => {
+  for (let i = 0; i < list.length; i++) {
+    list[i] = String(list[i]);
+  }
+  list = list.join("");
+  return parseInt(list, 2);
+};
+
 module.exports = {
   add,
   notNull,
   isTrue,
   twoProps,
+  onlyItemsOfnLength,
   numToString,
   returnPlanet,
   countStudents,
   sqrDigits,
+  centuryOf,
+  binaryArrayToInt,
 };
