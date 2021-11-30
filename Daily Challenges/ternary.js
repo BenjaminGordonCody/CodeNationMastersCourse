@@ -1,7 +1,7 @@
-let boolVar = 3 < 23;
+let boolVar = 3 > 23;
 
 // If/else evaluation
-const ifelse = (bool) => {
+const ifElseExample = (bool) => {
   if (bool == true) {
     return "it's true";
   } else {
@@ -10,10 +10,10 @@ const ifelse = (bool) => {
 };
 
 //Ternary operator evaluation
-const ternary = (bool) => {
+const ternaryExample = (bool) => {
   return bool ? "it's true" : "it's false";
 };
 
 //Results of each function
-console.log(`ifelse() says ${ifelse(boolVar)}`);
-console.log(`ternary() says ${ternary(boolVar)}`);
+console.log(`ifElseExample() says ${ifElseExample(boolVar)}`);
+console.log(`ternaryExample() says ${ternaryExample(boolVar)}`);
