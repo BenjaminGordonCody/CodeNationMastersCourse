@@ -44,7 +44,7 @@ const divide = (a, b) => {
   return a / b;
 };
 
-const subtravt = (a, b) => {
+const subtract = (a, b) => {
   return a - b;
 };
 
@@ -56,3 +56,8 @@ const doMath = (num1) => {
 
 let example = doMath(5);
 console.log(example(5, multiply));
+
+let mathsResult = doMath(4);
+let nextResult = mathsResult(5, subtract);
+
+console.log(nextResult);
